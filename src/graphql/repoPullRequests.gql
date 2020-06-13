@@ -1,0 +1,28 @@
+query RepoPRs($id: ID!) {
+  node(id: $id) {
+    ... on Repository {
+      name
+      id
+      pullRequests(
+        first: 100
+        states: OPEN
+        orderBy: { field: CREATED_AT, direction: DESC }
+      ) {
+        edges {
+          node {
+            createdAt
+            id
+            title
+            bodyText
+            changedFiles
+            createdAt
+            url
+            author {
+              login
+            }
+          }
+        }
+      }
+    }
+  }
+}

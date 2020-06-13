@@ -1,0 +1,21 @@
+query RepoDetails($id: ID!) {
+  node(id: $id) {
+    ... on Repository {
+      id
+      name
+      description
+      homepageUrl
+      url
+      pushedAt
+      primaryLanguage {
+        name
+      }
+      pullRequests(first: 100, states: OPEN) {
+        totalCount
+      }
+      vulnerabilityAlerts(first: 100) {
+        totalCount
+      }
+    }
+  }
+}
