@@ -1,3 +1,4 @@
+Simple react app that allows you to browse your repos, view open pull requests, and security vulnerabilities, all using the Github GraphQL api.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
